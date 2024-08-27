@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { api } from "@/convex/_generated/api";
 import { Doc } from "@/convex/_generated/dataModel";
+import { useApiMutation } from "@/hooks/use-api-mutation";
 import { useMutation } from "convex/react";
 import { useRouter } from "next/navigation";
 
@@ -11,7 +12,7 @@ interface UserCardProps {
 }
 
 export const UserCard = ({ otherUser }: UserCardProps) => {
-  const chat = useMutation(api.chats.getOrCreate);
+  const { mutate: chat, pending } = useApiMutation(api.chats.getOrCreate);
   const router = useRouter();
 
   const handleClick = async () => {
@@ -32,6 +33,7 @@ export const UserCard = ({ otherUser }: UserCardProps) => {
           </p>
         </div>
         <Button
+          disabled={pending}
           className="cursor-pointer"
           onClick={handleClick}
         >

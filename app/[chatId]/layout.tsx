@@ -1,15 +1,15 @@
 import { Navbar } from "@/components/navbar";
 import { Sidebar } from "@/components/sidebar";
 
-interface NewLayoutProps {
+interface ChatLayoutProps {
   children: React.ReactNode;
 }
 
-export default function NewLayout({ children }: NewLayoutProps) {
+export default function ChatLayout({ children }: ChatLayoutProps) {
   return (
-    <div className="w-full h-full">
+    <div>
       <Navbar />
-      <main className="flex h-full w-full">
+      <main className="flex h-full">
         <Sidebar />
         <div className="h-full w-full pl-[300px]">{children}</div>
       </main>

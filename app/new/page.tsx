@@ -15,7 +15,7 @@ const New = () => {
       <h1 className="text-4xl font-bold w-full text-center py-12">
         Select a user to start a chat with
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-10 ml-5">
         {otherUsers?.map((otherUser) => (
           <UserCard
             key={otherUser._id}
